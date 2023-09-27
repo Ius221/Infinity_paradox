@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2 class="text" align="center">Inifinity Hotel</h2>
+	<!--<div class="text" align="center">
+		<h1>WELCOME<br>Inifinity Hotel</h1>
+	</div>-->
+	<div class="text1" align="center">WELCOME</div>
+    <div class="text" align="center">Inifinity Hotel</div>
     <script>
         let text = document.querySelector('.text');
         text.innerHTML=text.innerText.split('').map((letters, i) => `<span style="transition-delay:${i * 40}ms;filter:hue-rotate(${i * 30}deg)">${letters}</span>`).join('');
+
+		let text1 = document.querySelector('.text1');
+        text1.innerHTML=text1.innerText.split('').map((letters, i) => `<span style="transition-delay:${i * 40}ms;filter:hue-rotate(${i * 30}deg)">${letters}</span>`).join('');
     </script>
 </body>
 </html>
