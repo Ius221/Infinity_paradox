@@ -8,11 +8,12 @@ body{
     /*display: flex;*/
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+/*     min-height: 50vh; */
     background-color: #222;
 
 }
 h2{
+    margin-top: 8%;
     position: relative;
     font-size: 3em;
     letter-spacing: .05em;
