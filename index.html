@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2 class="text" align="center">Inifinity Hotel</h2>
+    <h2 class="text">Inifinity Hotel</h2>
     <script>
         let text = document.querySelector('.text');
         text.innerHTML=text.innerText.split('').map((letters, i) => `<span style="transition-delay:${i * 40}ms;filter:hue-rotate(${i * 30}deg)">${letters}</span>`).join('');
