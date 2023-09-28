@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="stars">
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+	  </div>
+    <h2 class="text" align="center">WELCOME</h2>
+    <h2 class="text1" align="center">Inifinity Hotel</h2> 
+
+	
+
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <div class="forget">
+                      
+                    </div>
+                    <button>Log in</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let text = document.querySelector('.text');
+        text.innerHTML=text.innerText.split('').map((letters, i) => `<span style="transition-delay:${i * 60}ms;filter:hue-rotate(${i * 50}deg)">${letters}</span>`).join('');
+        let text1 = document.querySelector('.text1');
+        text1.innerHTML=text1.innerText.split('').map((letters, i) => `<span style="transition-delay:${i * 40}ms;filter:hue-rotate(${i * 30}deg)">${letters}</span>`).join('');
+    </script>
+</body>
+</html>
