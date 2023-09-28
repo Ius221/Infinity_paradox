@@ -1,0 +1,728 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="stars">
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+		<div class="star"></div>
+	  </div>
+
+	  <!-- Home button -->
+	  <a class="button" href="{% url 'login' %}">
+		<input type="button" name="home"> Home
+	  </a>
+	  
+
+	  <!-- Home button -->
+    <h2 class="text" align="center" style="font-size: 70px;">WELCOME</h2>
+    <h2 class="text1" align="center"style="font-size: 70px;">INFINITE HOTEL</h2> 
+
+	
+<!-- Login Form -->
+
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="" method="post">
+					{% csrf_token %}
+                    <h2>REGISTRATION</h2>
+                    <div class="inputbox">
+                        <input type="text" name="name1" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+					<div class="inputbox">
+                        <input type="tel" name="contect_number" required>
+                        <label>Contact</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="state" required>
+                        <label>State</label>
+                    </div>
+					<div class="inputbox">
+                        <input type="text" name="nationality" required>
+                        <label>Nationality</label>
+                    </div>
+                    <button>SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!-- Login Form -->
+
+    <script>
+        let text = document.querySelector('.text');
+        text.innerHTML=text.innerText.split('').map((letters, i) => `<span style="transition-delay:${i * 60}ms;filter:hue-rotate(${i * 50}deg)">${letters}</span>`).join('');
+        let text1 = document.querySelector('.text1');
+        text1.innerHTML=text1.innerText.split('').map((letters, i) => `<span style="transition-delay:${i * 40}ms;filter:hue-rotate(${i * 30}deg)">${letters}</span>`).join('');
+    </script>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+		.text{
+			margin-top: 20px;
+		}
+		h2{
+			/* position: relative; */
+			font-size: 3em;
+			letter-spacing: .1em;
+			cursor: default;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+		h2 span{
+			color: #555;
+			transition: 0.25s;   
+		}
+		h2:hover span{
+			color: #0f0;
+			text-shadow: 2px -3px 7px #0f0;
+		}
+		
+		/* Page Background */
+		
+		body {
+			min-height: 100vh;
+			background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+			overflow: hidden;
+		  }
+		  
+		  .stars {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 910px;
+			height: 320px;
+			transform: rotate(-45deg);
+			z-index: -1;
+		  }
+		  
+		  .star {
+			--star-tail-length: 6em;
+			--star-tail-height: 2px;
+			--star-width: calc(var(--star-tail-length) / 6);
+			--fall-duration: 9s;
+			--tail-fade-duration: var(--fall-duration);
+			position: absolute;
+			top: var(--top-offset);
+			left: 0;
+			width: var(--star-tail-length);
+			height: var(--star-tail-height);
+			color: var(--star-color);
+			background: linear-gradient(45deg, currentColor, transparent);
+			border-radius: 50%;
+			filter: drop-shadow(0 0 6px currentColor);
+			transform: translate3d(104em, 0, 0);
+			animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+		  }
+		  @media screen and (max-width: 750px) {
+			.star {
+			  animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+			}
+		  }
+		  .star:nth-child(1) {
+			--star-tail-length: 6.21em;
+			--top-offset: 42.45vh;
+			--fall-duration: 10.592s;
+			--fall-delay: 9.727s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(2) {
+			--star-tail-length: 7.22em;
+			--top-offset: 49.82vh;
+			--fall-duration: 9.473s;
+			--fall-delay: 8.357s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(3) {
+			--star-tail-length: 7.15em;
+			--top-offset: 87.63vh;
+			--fall-duration: 6.099s;
+			--fall-delay: 2.308s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(4) {
+			--star-tail-length: 5.22em;
+			--top-offset: 49.98vh;
+			--fall-duration: 9.929s;
+			--fall-delay: 7.928s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(5) {
+			--star-tail-length: 5.13em;
+			--top-offset: 45.95vh;
+			--fall-duration: 8.634s;
+			--fall-delay: 7.319s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(6) {
+			--star-tail-length: 6.28em;
+			--top-offset: 90.56vh;
+			--fall-duration: 9.742s;
+			--fall-delay: 3.432s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(7) {
+			--star-tail-length: 7.4em;
+			--top-offset: 26.17vh;
+			--fall-duration: 6.696s;
+			--fall-delay: 7.747s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(8) {
+			--star-tail-length: 6.68em;
+			--top-offset: 98.55vh;
+			--fall-duration: 9.294s;
+			--fall-delay: 1.342s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(9) {
+			--star-tail-length: 7.37em;
+			--top-offset: 24.04vh;
+			--fall-duration: 7.891s;
+			--fall-delay: 5.472s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(10) {
+			--star-tail-length: 6.57em;
+			--top-offset: 66.46vh;
+			--fall-duration: 8.745s;
+			--fall-delay: 5.419s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(11) {
+			--star-tail-length: 5.16em;
+			--top-offset: 6.66vh;
+			--fall-duration: 10.259s;
+			--fall-delay: 1.491s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(12) {
+			--star-tail-length: 5.42em;
+			--top-offset: 87.68vh;
+			--fall-duration: 8.672s;
+			--fall-delay: 1.142s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(13) {
+			--star-tail-length: 6.42em;
+			--top-offset: 64.68vh;
+			--fall-duration: 9.155s;
+			--fall-delay: 9.982s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(14) {
+			--star-tail-length: 5.95em;
+			--top-offset: 20.74vh;
+			--fall-duration: 6.159s;
+			--fall-delay: 0.024s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(15) {
+			--star-tail-length: 5.16em;
+			--top-offset: 45.38vh;
+			--fall-duration: 11.194s;
+			--fall-delay: 0.794s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(16) {
+			--star-tail-length: 5.4em;
+			--top-offset: 65.81vh;
+			--fall-duration: 9.99s;
+			--fall-delay: 1.571s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(17) {
+			--star-tail-length: 5.59em;
+			--top-offset: 53.23vh;
+			--fall-duration: 9.157s;
+			--fall-delay: 4.478s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(18) {
+			--star-tail-length: 5.08em;
+			--top-offset: 51.4vh;
+			--fall-duration: 7.726s;
+			--fall-delay: 4.585s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(19) {
+			--star-tail-length: 6.27em;
+			--top-offset: 70.85vh;
+			--fall-duration: 10.765s;
+			--fall-delay: 9.801s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(20) {
+			--star-tail-length: 7.25em;
+			--top-offset: 89.4vh;
+			--fall-duration: 6.329s;
+			--fall-delay: 3.436s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(21) {
+			--star-tail-length: 6.48em;
+			--top-offset: 77.77vh;
+			--fall-duration: 6.55s;
+			--fall-delay: 3.145s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(22) {
+			--star-tail-length: 7.16em;
+			--top-offset: 29.22vh;
+			--fall-duration: 8.821s;
+			--fall-delay: 9.85s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(23) {
+			--star-tail-length: 5.66em;
+			--top-offset: 18.11vh;
+			--fall-duration: 9.17s;
+			--fall-delay: 9.72s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(24) {
+			--star-tail-length: 5.72em;
+			--top-offset: 25.06vh;
+			--fall-duration: 11.263s;
+			--fall-delay: 7.259s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(25) {
+			--star-tail-length: 7.03em;
+			--top-offset: 65.89vh;
+			--fall-duration: 6.437s;
+			--fall-delay: 9.98s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(26) {
+			--star-tail-length: 5.29em;
+			--top-offset: 14.61vh;
+			--fall-duration: 11.246s;
+			--fall-delay: 1.55s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(27) {
+			--star-tail-length: 7.08em;
+			--top-offset: 72.48vh;
+			--fall-duration: 9.073s;
+			--fall-delay: 9.011s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(28) {
+			--star-tail-length: 7.43em;
+			--top-offset: 60.68vh;
+			--fall-duration: 11.474s;
+			--fall-delay: 4.157s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(29) {
+			--star-tail-length: 7.23em;
+			--top-offset: 6.89vh;
+			--fall-duration: 8.996s;
+			--fall-delay: 9.775s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(30) {
+			--star-tail-length: 7.42em;
+			--top-offset: 76.47vh;
+			--fall-duration: 11.87s;
+			--fall-delay: 4.601s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(31) {
+			--star-tail-length: 5.81em;
+			--top-offset: 91.71vh;
+			--fall-duration: 7.086s;
+			--fall-delay: 7.902s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(32) {
+			--star-tail-length: 7.17em;
+			--top-offset: 64.69vh;
+			--fall-duration: 6.847s;
+			--fall-delay: 8.758s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(33) {
+			--star-tail-length: 7.41em;
+			--top-offset: 34.41vh;
+			--fall-duration: 6.94s;
+			--fall-delay: 5.03s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(34) {
+			--star-tail-length: 5.04em;
+			--top-offset: 26.08vh;
+			--fall-duration: 7.646s;
+			--fall-delay: 8.623s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(35) {
+			--star-tail-length: 6.21em;
+			--top-offset: 76.47vh;
+			--fall-duration: 7.772s;
+			--fall-delay: 5.301s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(36) {
+			--star-tail-length: 5.23em;
+			--top-offset: 69.87vh;
+			--fall-duration: 6.862s;
+			--fall-delay: 6.309s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(37) {
+			--star-tail-length: 5.12em;
+			--top-offset: 26.43vh;
+			--fall-duration: 9.94s;
+			--fall-delay: 7.333s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(38) {
+			--star-tail-length: 5.62em;
+			--top-offset: 14.71vh;
+			--fall-duration: 9.006s;
+			--fall-delay: 1.322s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(39) {
+			--star-tail-length: 6.8em;
+			--top-offset: 38.65vh;
+			--fall-duration: 8.884s;
+			--fall-delay: 3.272s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(40) {
+			--star-tail-length: 5.61em;
+			--top-offset: 85.27vh;
+			--fall-duration: 9.691s;
+			--fall-delay: 1.364s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(41) {
+			--star-tail-length: 6.78em;
+			--top-offset: 15.7vh;
+			--fall-duration: 11.223s;
+			--fall-delay: 8.928s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(42) {
+			--star-tail-length: 7.02em;
+			--top-offset: 7.6vh;
+			--fall-duration: 9.561s;
+			--fall-delay: 7.368s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(43) {
+			--star-tail-length: 6.9em;
+			--top-offset: 92.19vh;
+			--fall-duration: 7.925s;
+			--fall-delay: 3.166s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(44) {
+			--star-tail-length: 5.32em;
+			--top-offset: 87.53vh;
+			--fall-duration: 8.836s;
+			--fall-delay: 8.61s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(45) {
+			--star-tail-length: 5.34em;
+			--top-offset: 5.32vh;
+			--fall-duration: 8.182s;
+			--fall-delay: 9.239s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(46) {
+			--star-tail-length: 5.92em;
+			--top-offset: 75.83vh;
+			--fall-duration: 6.159s;
+			--fall-delay: 6.825s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(47) {
+			--star-tail-length: 7.07em;
+			--top-offset: 2.93vh;
+			--fall-duration: 6.185s;
+			--fall-delay: 3.548s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(48) {
+			--star-tail-length: 7.26em;
+			--top-offset: 81.23vh;
+			--fall-duration: 9.088s;
+			--fall-delay: 7.928s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(49) {
+			--star-tail-length: 7.16em;
+			--top-offset: 99.11vh;
+			--fall-duration: 6.208s;
+			--fall-delay: 7.329s;
+			color: aliceblue;
+		  }
+		  .star:nth-child(50) {
+			--star-tail-length: 7.16em;
+			--top-offset: 61.93vh;
+			--fall-duration: 6.572s;
+			--fall-delay: 2.571s;
+			color: aliceblue;
+		  }
+		  .star::before, .star::after {
+			position: absolute;
+			content: "";
+			top: 0;
+			left: calc(var(--star-width) / -2);
+			width: var(--star-width);
+			height: 100%;
+			background: linear-gradient(45deg, transparent, currentColor, transparent);
+			border-radius: inherit;
+			animation: blink 2s linear infinite;
+		  }
+		  .star::before {
+			transform: rotate(45deg);
+		  }
+		  .star::after {
+			transform: rotate(-45deg);
+		  }
+		  
+		  @keyframes fall {
+			to {
+			  transform: translate3d(-30em, 0, 0);
+			}
+		  }
+		  @keyframes tail-fade {
+			0%, 50% {
+			  width: var(--star-tail-length);
+			  opacity: 1;
+			}
+			70%, 80% {
+			  width: 0;
+			  opacity: 0.4;
+			}
+			100% {
+			  width: 0;
+			  opacity: 0;
+			}
+		  }
+		  @keyframes blink {
+			50% {
+			  opacity: 0.6;
+			}
+		  }
+		
+		/* Page Background */
+		
+		/* Login Form */
+		
+		  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'poppins',sans-serif;
+		}
+		section{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 580px;
+			padding-top: 30px;
+			width: 100%;
+			background-position: center;
+			background-size: cover;
+		}
+		.form-box{
+			position: relative;
+			width: 400px;
+			height: 650px;
+			background: transparent;
+			border: 2px solid rgba(255,255,255,0.5);
+			border-radius: 20px;
+			backdrop-filter: blur(12px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		h2{
+			font-size: 2em;
+			color: #fff;
+			text-align: center;
+		}
+		.inputbox{
+			position: relative;
+			margin: 30px 0;
+			width: 310px;
+			border-bottom: 2px solid #fff;
+		}
+		.inputbox label{
+			position: absolute;
+			top: 50%;
+			left: 5px;
+			transform: translateY(-50%);
+			color: #fff;
+			font-size: 1em;
+			pointer-events: none;
+			transition: .5s;
+		}
+		input:focus ~ label,
+		input:valid ~ label{
+		top: -5px;
+		}
+		.inputbox input {
+			width: 100%;
+			height: 50px;
+			background: transparent;
+			border: none;
+			outline: none;
+			font-size: 1em;
+			padding:0 35px 0 5px;
+			color: #fff;
+		}
+		.inputbox ion-icon{
+			position: absolute;
+			right: 8px;
+			color: #fff;
+			font-size: 1.2em;
+			top: 20px;
+		}
+		.forget{
+			margin: -15px 0 15px ;
+			font-size: .9em;
+			color: #fff;
+			display: flex;
+			justify-content: space-between;  
+		}
+		
+		.forget label input{
+			margin-right: 3px;
+			
+		}
+		.forget label a{
+			color: #fff;
+			text-decoration: none;
+		}
+		.forget label a:hover{
+			text-decoration: underline;
+		}
+		button{
+			width: 100%;
+			height: 60px;
+			border-radius: 40px;
+			background: #fff;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			font-size: 1em;
+			box-shadow: 0px 1px 20px antiquewhite;
+			font-weight: 600;
+			margin-top: 15px;
+		}
+		.register{
+			font-size: .9em;
+			color: #fff;
+			text-align: center;
+			margin: 25px 0 10px;
+		}
+		.register p a{
+			text-decoration: none;
+			color: #fff;
+			font-weight: 600;
+		}
+		.register p a:hover{
+			text-decoration: underline;
+		}
+		
+		/*  Registration Form */
+
+		/* Login button */
+
+		.button {
+			transition-duration: 0.4s;
+			border-radius: 8px;
+			padding: 10px 16px;
+			border: white;
+			text-align: center;
+  			text-decoration: solid;
+  			display: inline-block;
+  			font-size: 16;
+			color: white;
+			margin-top: 30px;
+			margin-left: 90%;
+
+		}
+
+			.button:hover {
+			background-color: white; /* Green */
+			color: purple;
+			}
+
+		/* Home button */
+	</style>
+</body>
+</html>
