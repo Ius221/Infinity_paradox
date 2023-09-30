@@ -62,7 +62,7 @@
 
 	  <!-- Home button -->
 	  <a class="button" href="{% url 'login' %}">
-		<input type="button" name="home"> Home
+		<input type="button" name="home"> LOGIN
 	  </a>
 	  
 
@@ -80,7 +80,7 @@
 					{% csrf_token %}
                     <h2>REGISTRATION</h2>
                     <div class="inputbox">
-                        <input type="text" name="name1" required>
+                        <input type="text" name="name" required>
                         <label>Name</label>
                     </div>
                     <div class="inputbox">
@@ -88,7 +88,7 @@
                         <label>Email</label>
                     </div>
 					<div class="inputbox">
-                        <input type="tel" name="contect_number" required>
+                        <input type="number" name="contact_number" required>
                         <label>Contact</label>
                     </div>
                     <div class="inputbox">

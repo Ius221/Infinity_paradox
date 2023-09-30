@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import pymongo
+import time
 
 url = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.1'
 
@@ -39,7 +40,14 @@ def addCustomer(request):
     state = str(a.get('state'))
     nationality = str(a.get('nationality'))
     try:
-        customer_collec.insert_one({'name':name,'email':email,'contact_number':contact_number,'state':state,'nationality':nationality})
+        if customer_collec.count_documents({}) == 0:
+            customer_collec.insert_one({'name':name,'email':email,'contact_number':contact_number,'state':state,'nationality':nationality,'room':1})
+        else:
+            n = customer_collec.count_documents({})+1
+            for i in range(1,n):
+                customer_collec.update_one({'room':i},{"$set":{'room':i+1}})
+            customer_collec.insert_one({'name':name,'email':email,'contact_number':contact_number,'state':state,'nationality':nationality,'room':1})
         print("!!!SUCCESSFULL!!!")
-    except:
+    except Exception as e:
         print("!!!FAILED!!!")
+        print(e)
