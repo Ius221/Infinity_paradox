@@ -1,11 +1,9 @@
-<!--<!DOCTYPE html>-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WELCOME</title>
 </head>
-<body>
+<body oncontextmenu="return false">
 	<div class="stars">
 		<div class="star"></div>
 		<div class="star"></div>
@@ -75,18 +73,18 @@
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="" method="post">
+                <form action="" method="post" id="form1">
 					{% csrf_token %}
                     <h2>WELCOME</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" name="email" required>
-                        <label for="">Email</label>
+                        <input type="email" name="email" required autocomplete="on">
+                        <label for="form1">Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="password" name="passwd" required>
-                        <label for="">Password</label>
+                        <label for="form1">Password</label>
                     </div>
                     <button>Log in</button>
                 </form>
